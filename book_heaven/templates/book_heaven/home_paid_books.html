@@ -1,0 +1,66 @@
+{% extends "book_heaven/layout.html" %}
+
+{% block title %} Home{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}  
+        <!-- Recommendations starts -->
+        <div>
+            <h1 class="rec_books">Recommended Books</h1>
+            <hr class="title_h">
+            <div class="buttons_h">
+                <a class="btn btn-secondary" href="{% url 'home' %}" role="button">Free Books</a>
+                <a class="btn btn-primary" href="{% url 'home_paid_books' %}" role="button">Paid Books</a>    
+            </div>
+            <!-- recommended books -->
+            <div>
+                {% for paid_book in recomended_paid_books %}
+                    <div class="row book_h">
+                        {% if paid_book.Image_url %}  
+                            <div class="col-md-4 book_image_h">
+                                <img src="{{paid_book.Image_url}}" alt ="image">
+                            </div>                 
+                        {% else %}
+                            <div class="col-md-4 book_image_h">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAB2CAMAAACwGoL7AAAAMFBMVEXm5uazs7PU1NS8vLzKysqvr6/Hx8fCwsLp6enh4eHb29u3t7fPz8/e3t7Y2Njt7e3PoZk0AAABV0lEQVR4nO3a7WqDMBSA4URz9PhRvf+7XeI2t3/mwNhJyvtCSwsVnobYRkwIRERERERERETknnoDjJ1rmsfnUvleul8vXb26zBIrkukSp/JhWV3BWxU4xi/xpR8cxctW521GrFPlCDcjXmq9rYh1+BGNXYhDukHr+TClGxFP9wjnNzNixIgRI0aMGPE/iXXXzsSvuPYlPpPkR0/iIFFCT+K0S3nqSDyXS5Rt7kj8K8SIESNGjBgxYsSIETcm3roT5wv7+puRbYjl6e5Yc2JLiBG/hfjwF4upuHiLtzRYchzhT7FMi9ryFs+np8BaEb+sBx2O07iIR+MhOor4nnlmsbjuE9rzD4VxwHzF4cjzeLCd+87iUNbEi4nsLNah7NDbTRPDeYyvSyXZKvbG3jnv2wxatzW2mbVbaYhWs5j/dP421XVPplyXQt/oblZCRERERERERESU+wAfwxl7V33Q+QAAAABJRU5ErkJggg==" alt ="image">
+                            </div> 
+                        {% endif %}
+                        <div class="col-md-8 book_info_h">
+                            {% if paid_book.title %}
+                                <h3>{{paid_book.title}}</h3>
+                            {% endif %}
+                            {% if paid_book.Authors %}  
+                                <h4>{{paid_book.Authors}}</h4>      
+                            {% endif %}
+                            <a href="{% url 'paid_book' paid_book.id %}">View Book</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="buttons_home">
+                {% if recomended_paid_books.has_previous %}
+                    <a href="?page={{recomended_paid_books.previous_page_number}}">Previous</a>
+                {% else %}
+                <!-- <li class="disabled"><span>&laquo;</span></li> -->
+                {% endif %}
+                {% if recomended_paid_books.has_next %}
+                    <a href="?page={{recomended_paid_books.next_page_number}}">Next</a>
+                {% else %}
+                <!-- <li class="disabled"><span>&raquo;</span></li> -->
+                {% endif %} 
+            </div>
+        </div>
+        <!-- Recommendations Ends -->    
+    {% else %}
+        <h1>Not Signed in, Please Sign in first</h1>
+    {% endif %}
+    <div style="margin: 100px;"></div>
+    <div class="contact_us">
+        <h2>Contact us</h2>
+        
+        <a href="mailto:fatmabadr1272000@gmail.com"><i class="material-icons" style="font-size:36px">email</i></a>
+        <a href="mailto:bassantmahmoud1010@gmail.com"><i class="material-icons" style="font-size:36px">email</i></a>
+        <a href="mailto:ayahassan.holmez@gmail.com"><i class="material-icons" style="font-size:36px">email</i></a>
+        
+    </div>
+{% endblock %}
