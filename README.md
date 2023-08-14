@@ -71,13 +71,13 @@ This approach is based on converting the users, and books into embeddings, such 
 ![Matrix factorization](images/matrix fact.PNG)
 #### a) Collaborative filter Matrix Factorization model 1
 #### Architecture
-![Collaborative filter Matrix Factorization model 1](images/cp model1.png) 
+![Collaborative filter Matrix Factorization model 1](images/cp model1_P.PNG) 
 ![Model 1 MSE with different batch sizes](images/model1_bs.PNG) 
 ![Model 1 MSE with different embedding dimensionss](images/model1_es.PNG) 
 
 #### b) Collaborative filter Matrix Factorization model 2
 ##### Architecture:
-![Collaborative filter Matrix Factorization model 2](images/cp model2.png) 
+![Collaborative filter Matrix Factorization model 2](images/cp model2_P.PNG) 
 ![Model 2 MSE with different batch sizes](images/model2_bs.PNG) 
 ![Model 2 MSE with different embedding dimensionss](images/model2_es.PNG) 
 
