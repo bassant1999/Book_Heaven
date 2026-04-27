@@ -7,6 +7,14 @@ it is a reading website that enables users to read publicly listed books, purcha
 2. run **pip install -r requirements.txt**
 3. run **python manage.py makemigrations**, and run **python manage.py migrate**
 4. run **python manage.py runserver**
+5. generate **API Key**:
+   1. Go to your [Groq Console](https://console.groq.com/keys).
+   2. Create a new API Key.
+   3. Copy it immediately.
+   4. Replace the string **GENAI_API_KEY** in **settings.py**:
+      Example:
+      GENAI_API_KEY = "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"
+
 
 # Website features
 * Website has signup, log in and log out options. 
