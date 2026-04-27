@@ -3,9 +3,10 @@ Reading website with personalized recommendation and search.
 it is a reading website that enables users to read publicly listed books, purchase paid books  through a link to external web sites, and add their previous readings from other websites such as goodreads.
 
 # getting start
-1. run **pip install -r requirements.txt**
-2. run **python manage.py makemigrations**, and run **python manage.py migrate**
-3. run **python manage.py runserver**
+1. download **simmat3.csv** from **https://github.com/AyaMHassan/reading_website/blob/main/simmat3.csv**
+2. run **pip install -r requirements.txt**
+3. run **python manage.py makemigrations**, and run **python manage.py migrate**
+4. run **python manage.py runserver**
 
 # Website features
 * Website has signup, log in and log out options. 
