@@ -7,3 +7,7 @@ pandas
 numpy
 tensorflow
 matplotlib
+scikit-learn
+
+beautifulsoup4
+seaborn
