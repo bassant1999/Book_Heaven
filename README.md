@@ -3,8 +3,9 @@ Reading website with personalized recommendation and search.
 it is a reading website that enables users to read publicly listed books, purchase paid books  through a link to external web sites, and add their previous readings from other websites such as goodreads.
 
 # getting start
-1. run **python manage.py makemigrations**, and run **python manage.py migrate**
-2. run **python manage.py runserver**
+1. run **pip install -r requirements.txt**
+2. run **python manage.py makemigrations**, and run **python manage.py migrate**
+3. run **python manage.py runserver**
 
 # Website features
 * Website has signup, log in and log out options. 
