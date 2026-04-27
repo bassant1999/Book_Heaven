@@ -2,6 +2,10 @@
 Reading website with personalized recommendation and search.
 it is a reading website that enables users to read publicly listed books, purchase paid books  through a link to external web sites, and add their previous readings from other websites such as goodreads.
 
+# Getting Start
+run python manage.py makemigrations, and run python manage.py migrate
+run python manage.py runserver
+
 # Website features
 * Website has signup, log in and log out options. 
 * Each user must declare 6 books (3 paid books and 3 free books) with their rates that he/she has already read before during signup operation to facilitate the recommendation system’s work at the beginning of the user journey on the website.
