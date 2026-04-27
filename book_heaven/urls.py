@@ -33,6 +33,7 @@ urlpatterns = [
    path("paid_book/<int:paid_book_id>",views.paid_book,name="paid_book"), 
    path("book_to_library/<int:paid_book_id>", views.book_to_library, name="book_to_library"),
    path("paid_book/rating_stars",views.rating_stars,name="rating_stars") ,
+   path("get_explanation/<int:book_id>/", views.get_book_explanation, name="get_explanation"),
    # review paid book 
    path("paid_book/review_paid_book",views.review_paid_book,name="review_paid_book"),
    # search page

@@ -150,6 +150,23 @@ def home_paid_books(request):
         "recomended_paid_books": recomended_paid_books
             })
 
+def get_book_explanation(request, book_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Not authenticated"}, status=403)
+
+    try:
+        # 1. Get the book and the user's history
+        book = paid_books.objects.get(id=book_id)
+        history_dict = p_user_history(request.user) # this returns {title: rating}
+        user_history_titles = list(history_dict.keys())
+        
+        # 2. Explain Recommendation
+        explanation = explain_recommendation(user_history_titles, book.title)
+        
+        return JsonResponse({"explanation": explanation})
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
 # login page
 def login_view(request):
     #hereeeeeeeeee

@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# API Key for GenAI model
+GENAI_API_KEY = "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"
